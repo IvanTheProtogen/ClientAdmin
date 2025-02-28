@@ -22,8 +22,6 @@ local function main(data)
 		for i,v in data.Commands do 
 			local start = string.sub(msg,1,#data.Prefix)
 			local cmd = string.sub(msg,#data.Prefix+1,#i+1)
-			print(start)
-			print(cmd)
 			if cmd==i and start==data.Prefix then 
 				local params
 				params = string.sub(msg,#start+#cmd+2)
