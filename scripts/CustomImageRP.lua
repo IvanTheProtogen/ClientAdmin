@@ -56,7 +56,7 @@ end
 
 function config.Commands.shapeshift(args)
 	local plr = ExtraAbilities.FindPlayerByName(args[1])
-	events.Morph:FireServer({string.sub(plr.Tags.CurrentImage.Value,71),10,10})
+	events.Morph:FireServer({string.sub(plr.Tags.CurrentImage.Value,71),Xtb.Text,Ytb.Text})
 	events.RPNAME:FireServer(plr.Tags.RPNAME.Value)
 end
 
@@ -162,7 +162,7 @@ function config.Commands.cmds()
 	local cmds = {}
 	cmds[1] = {".savedimages [player]","Previews player's saved images."}
 	cmds[2] = {".announce [message]","Makes an announcement. (COOLDOWN: 5 mins)"}
-	cmds[3] = {".shapeshift [player]","Shapeshift as a player. (SIZE UNSUPPORTED!)"}
+	cmds[3] = {".shapeshift [player]","Shapeshift as a player."}
 	cmds[4] = {".vanish","Turns you invisible."}
 	cmds[5] = {".copyname [player]","Copies player's RP name to your clipboard."}
 	cmds[6] = {".copydecal [player]","Copies player's decal to your clipboard."}
@@ -175,7 +175,7 @@ function config.Commands.cmds()
 	cmds[13] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
 	cmds[14] = {".stopwobbly","Stops wobbly animation"}
 	cmds[15] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
-	cmds[16] = {"NOTICE!","This applies to .skull also."}
+	cmds[16] = {"NOTICE!","This applies to .skull, .savedimages and .shapeshift also."}
 	cmds[17] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
 	cmds[18] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
