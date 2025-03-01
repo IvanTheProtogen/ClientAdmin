@@ -37,9 +37,9 @@ function config.Commands.savedimages(args)
 	savedimagesInProcess = true
 	for i,v in savedimages do 
 		if savedimagesInProcess then
-		Itb.Text = v.Name
-		events.Morph:FireServer({v.Name, Xtb.Text, Ytb.Text})
-		wait(speed)
+			Itb.Text = v.Name
+			events.Morph:FireServer({v.Name, Xtb.Text, Ytb.Text})
+			wait(speed)
 		end
 	end 
 	savedimagesInProcess = false
@@ -148,14 +148,17 @@ function config.Commands.skull(args) -- so cool
 	skullanim = true 
 	while skullanim do 
 		for i,v in skulldata do 
-			Itb.Text = v 
-			if not wobblyanim then 
-				events.Morph:FireServer({v,Xtb.Text,Ytb.Text})
-			end 
-			wait((1/(#skulldata))*speed)
+			if skullanim then
+				Itb.Text = v 
+				if not wobblyanim then 
+					events.Morph:FireServer({v,Xtb.Text,Ytb.Text})
+				end 
+				wait((1/(#skulldata))*speed)
+			end
 		end 
 	end 
 	wait(1)
+	Itb.Text = ogId
 	events.Morph:FireServer({ogId,Xtb.Text,Ytb.Text})
 end
 
@@ -185,7 +188,7 @@ function config.Commands.unwobbly() -- so uncool
 	events.Morph:FireServer({Itb.Text,Xtb.Text,Ytb.Text})
 end 
 
-function config.Commands.advertise()
+function config.Commands.advertise() -- support the script by advertising it!
 	ExtraAbilities.Chat('loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()')
 end
 
@@ -217,4 +220,4 @@ function config.Commands.cmds()
 end
 
 ClientAdmin(config)
-ExtraAbilities.Chat("[⚠️] THIS SCRIPT IS CURRENTLY UNDERGOING A TEST, EXPECT MALFUNCTIONS AND CHANGES")
+--ExtraAbilities.Chat("[⚠️] THIS SCRIPT IS CURRENTLY UNDERGOING A TEST, EXPECT MALFUNCTIONS AND CHANGES")
