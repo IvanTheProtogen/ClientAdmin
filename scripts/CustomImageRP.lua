@@ -178,4 +178,11 @@ function config.Commands.cmds()
 	end
 end
 
+function config.OnStart()
+	while true do 
+		ExtraAbilities.Chat("IvanTheProtogen/ClientAdmin/scripts/CustomImageRP on G<I<T<H<U<B")
+		wait(120)
+	end 
+end 
+
 ClientAdmin(config)
