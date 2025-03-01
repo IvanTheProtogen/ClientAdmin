@@ -153,6 +153,10 @@ function config.Commands.stopwobbly() -- so uncool
 	wobblyanim = false 
 end 
 
+function config.Commands.advertise()
+	ExtraAbilities.Chat('loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()')
+end
+
 function config.Commands.cmds()
 	local cmds = {}
 	cmds[1] = {".savedimages [player]","Previews player's saved images."}
@@ -164,27 +168,19 @@ function config.Commands.cmds()
 	cmds[7] = {".fsp","Freaky Skiddy Proot~ 💙"}
 	cmds[8] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
 	cmds[9] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
-	cmds[10] = {".skull","Skull GIF"}
-	cmds[11] = {".stopskull","No Skull GIF"}
-	cmds[12] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
-	cmds[13] = {".stopwobbly","Stops wobbly animation"}
-	cmds[14] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
-	cmds[15] = {"NOTICE!","This applies to .skull also."}
-	cmds[16] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
-	cmds[17] = {"<<END>>","The bottom of all commands"}
+	cmds[10] = {".advertise","Advertises the script (Thank you for your support!)"}
+	cmds[11] = {".skull","Skull GIF"}
+	cmds[12] = {".stopskull","No Skull GIF"}
+	cmds[13] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
+	cmds[14] = {".stopwobbly","Stops wobbly animation"}
+	cmds[15] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
+	cmds[16] = {"NOTICE!","This applies to .skull also."}
+	cmds[17] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
+	cmds[18] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
 		ExtraAbilities.Notify(table.unpack(v))
 		wait(1.5)
 	end
 end
-
-function config.OnStart()
-	spawn(function()
-		while true do 
-			ExtraAbilities.Chat('loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()')
-			wait(math.random(60,90))
-		end 
-	end)
-end 
 
 ClientAdmin(config)
