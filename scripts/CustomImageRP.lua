@@ -79,7 +79,7 @@ end
 function config.Commands.votekick(args)
 	local plr = ExtraAbilities.FindPlayerByName(args[1])
 	table.remove(args,1)
-	events.StartVotekick(plr,table.concat(args," "))
+	events.StartVotekick:FireServer(plr,table.concat(args," "))
 end 
 
 local skullanim = false
