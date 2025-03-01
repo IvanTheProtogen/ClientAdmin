@@ -24,23 +24,32 @@ local spawn = task.spawn
 local events = game:GetService("ReplicatedStorage").Events
 
 local config = {}
-config.PlaceId = 7007567268
+config.PlaceId = 7007567268 
 config.Commands = {}
 
+local savedimagesInProcess = false
 function config.Commands.savedimages(args)
+	local ogId = Itb.Text
 	local plr = ExtraAbilities.FindPlayerByName(args[1])
 	local speed = tonumber(args[2]) or 1.5
 	local savedimages = plr.savedimages:GetChildren()
 	ExtraAbilities.Chat("Previewing "..plr.DisplayName.."'s saved images... ("..tostring(#savedimages)..")")
+	savedimagesInProcess = true
 	for i,v in savedimages do 
+		if savedimagesInProcess then
 		Itb.Text = v.Name
 		events.Morph:FireServer({v.Name, Xtb.Text, Ytb.Text})
 		wait(speed)
-	end
+		end
+	end 
+	savedimagesInProcess = false
 	ExtraAbilities.Chat("All done!")
+	events.Morph:FireServer({ogId,Xtb.Text,Ytb.Text})
 end
 
-
+function config.Commands.unsavedimages()
+	savedimagesInProcess = false 
+end
 
 function config.Commands.announce(args)
 	local msg = table.concat(args," ")
@@ -109,7 +118,8 @@ function config.Commands.copysavedimages(args)
 	toclipboard("{"..table.concat(tbl,", ").."} -- "..plr.Name.."'s saved images")
 end 
 
-local skullanim = false
+local skullanim = false 
+local wobblyanim = false
 local skulldata = {
 	"14015062843",
 	"14014950690",
@@ -132,16 +142,20 @@ local skulldata = {
 	"14015101476",
 	"14015102734"
 }
-function config.Commands.skull() -- so cool 
+function config.Commands.skull(args) -- so cool 
+	local speed = tonumber(args[1]) or 1
 	local ogId = Itb.Text
 	skullanim = true 
 	while skullanim do 
 		for i,v in skulldata do 
-			Itb.Text = v
-			events.Morph:FireServer({v,Xtb.Text,Ytb.Text})
-			wait(1/(#skulldata))
+			Itb.Text = v 
+			if not wobblyanim then 
+				events.Morph:FireServer({v,Xtb.Text,Ytb.Text})
+			end 
+			wait((1/(#skulldata))*speed)
 		end 
 	end 
+	wait(1)
 	events.Morph:FireServer({ogId,Xtb.Text,Ytb.Text})
 end
 
@@ -149,7 +163,6 @@ function config.Commands.unskull() -- so uncool
 	skullanim = false 
 end 
 
-local wobblyanim = false
 function config.Commands.wobbly(args) -- so cool
 	local speed = tonumber(args[1])
 	local strength = tonumber(args[2])
@@ -189,7 +202,7 @@ function config.Commands.cmds()
 	cmds[9] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
 	cmds[10] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
 	cmds[11] = {".advertise","Advertises the script (Thank you for your support!)"}
-	cmds[12] = {".skull","Skull GIF"}
+	cmds[12] = {".skull [speed]","Skull GIF"}
 	cmds[13] = {".unskull","No Skull GIF"}
 	cmds[14] = {".wobbly [speed] [strength]","Makes your image wobbly"}
 	cmds[15] = {".unwobbly","Stops wobbly animation"}
