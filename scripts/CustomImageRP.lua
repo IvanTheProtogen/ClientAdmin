@@ -1,6 +1,8 @@
 -- put me on autoexecute!
 -- type ".cmds" in chat for commands!
 
+-- loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()
+
 if game.PlaceId ~= 7007567268 then
 	return
 end
@@ -150,14 +152,15 @@ function config.Commands.cmds()
 	cmds[5] = {".copyname [player]","Copies player's RP name to your clipboard."}
 	cmds[6] = {".copydecal [player]","Copies player's decal to your clipboard."}
 	cmds[7] = {".fsp","Freaky Skiddy Proot~ 💙"}
-	cmds[8] = {".skull","Skull GIF"}
-	cmds[9] = {".stopskull","No Skull GIF"}
-	cmds[10] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
-	cmds[11] = {".stopwobbly","Stops wobbly animation"}
-	cmds[12] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
-	cmds[13] = {"NOTICE!","This applies to .skull also."}
-	cmds[14] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
-	cmds[15] = {"<<END>>","The bottom of all commands"}
+	cmds[8] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
+	cmds[9] = {".skull","Skull GIF"}
+	cmds[10] = {".stopskull","No Skull GIF"}
+	cmds[11] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
+	cmds[12] = {".stopwobbly","Stops wobbly animation"}
+	cmds[13] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
+	cmds[14] = {"NOTICE!","This applies to .skull also."}
+	cmds[15] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
+	cmds[16] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
 		ExtraAbilities.Notify(table.unpack(v))
 		wait(1.5)
