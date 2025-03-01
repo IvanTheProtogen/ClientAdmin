@@ -181,8 +181,8 @@ end
 function config.OnStart()
 	spawn(function()
 		while true do 
-			ExtraAbilities.Chat("IvanTheProtogen/ClientAdmin/scripts/CustomImageRP on G<I<T<H<U<B")
-			wait(60)
+			ExtraAbilities.Chat('loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()')
+			wait(math.random(60,90))
 		end 
 	end)
 end 
