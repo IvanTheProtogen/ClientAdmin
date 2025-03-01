@@ -29,14 +29,18 @@ config.Commands = {}
 
 function config.Commands.savedimages(args)
 	local plr = ExtraAbilities.FindPlayerByName(args[1])
+	local speed = tonumber(args[2]) or 1.5
 	local savedimages = plr.savedimages:GetChildren()
 	ExtraAbilities.Chat("Previewing "..plr.DisplayName.."'s saved images... ("..tostring(#savedimages)..")")
-	for i,v in savedimages do
+	for i,v in savedimages do 
+		Itb.Text = v.Name
 		events.Morph:FireServer({v.Name, Xtb.Text, Ytb.Text})
-		wait(1.5)
+		wait(speed)
 	end
 	ExtraAbilities.Chat("All done!")
 end
+
+
 
 function config.Commands.announce(args)
 	local msg = table.concat(args," ")
@@ -67,6 +71,9 @@ end
 function config.Commands.vanish()
 	events.Morph:FireServer({"17429623406", 10, 10})
 	events.RPNAME:FireServer("")
+	Itb.Text = "17429623406"
+	Xtb.Text = "0"
+	Ytb.Text = "0"
 end
 
 function config.Commands.copyname(args)
@@ -81,6 +88,9 @@ end
 function config.Commands.fsp()
 	events.Morph:FireServer({"90803725437474", 6, 6})
 	events.RPNAME:FireServer("Freaky Skiddy Proot~ 💙")
+	Itb.Text = "90803725437474"
+	Xtb.Text = "6"
+	Ytb.Text = "6"
 end
 
 function config.Commands.votekick(args)
@@ -123,21 +133,24 @@ local skulldata = {
 	"14015102734"
 }
 function config.Commands.skull() -- so cool 
+	local ogId = Itb.Text
 	skullanim = true 
 	while skullanim do 
 		for i,v in skulldata do 
+			Itb.Text = v
 			events.Morph:FireServer({v,Xtb.Text,Ytb.Text})
 			wait(1/(#skulldata))
 		end 
 	end 
+	events.Morph:FireServer({ogId,Xtb.Text,Ytb.Text})
 end
 
-function config.Commands.stopskull() -- so uncool 
+function config.Commands.unskull() -- so uncool 
 	skullanim = false 
 end 
 
 local wobblyanim = false
-function config.Commands.wobblyanim(args) -- so cool
+function config.Commands.wobbly(args) -- so cool
 	local speed = tonumber(args[1])
 	local strength = tonumber(args[2])
 	wobblyanim = true 
@@ -154,8 +167,9 @@ function config.Commands.wobblyanim(args) -- so cool
 	end 
 end 
 
-function config.Commands.stopwobbly() -- so uncool 
+function config.Commands.unwobbly() -- so uncool 
 	wobblyanim = false 
+	events.Morph:FireServer({Itb.Text,Xtb.Text,Ytb.Text})
 end 
 
 function config.Commands.advertise()
@@ -164,24 +178,25 @@ end
 
 function config.Commands.cmds()
 	local cmds = {}
-	cmds[1] = {".savedimages [player]","Previews player's saved images."}
-	cmds[2] = {".announce [message]","Makes an announcement. (COOLDOWN: 5 mins)"}
-	cmds[3] = {".shapeshift [player]","Shapeshift as a player."}
-	cmds[4] = {".vanish","Turns you invisible."}
-	cmds[5] = {".copyname [player]","Copies player's RP name to your clipboard."}
-	cmds[6] = {".copydecal [player]","Copies player's decal to your clipboard."}
-	cmds[7] = {".fsp","Freaky Skiddy Proot~ 💙"}
-	cmds[8] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
-	cmds[9] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
-	cmds[10] = {".advertise","Advertises the script (Thank you for your support!)"}
-	cmds[11] = {".skull","Skull GIF"}
-	cmds[12] = {".stopskull","No Skull GIF"}
-	cmds[13] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
-	cmds[14] = {".stopwobbly","Stops wobbly animation"}
-	cmds[15] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
-	cmds[16] = {"NOTICE!","This applies to .skull, .savedimages and .shapeshift also."}
-	cmds[17] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
-	cmds[18] = {"<<END>>","The bottom of all commands"}
+	cmds[1] = {".savedimages [player] [speed]","Previews player's saved images."}
+	cmds[2] = {".unsavedimages","Disrupts .savedimages in process."}
+	cmds[3] = {".announce [message]","Makes an announcement. (COOLDOWN: 5 mins)"}
+	cmds[4] = {".shapeshift [player]","Shapeshift as a player."}
+	cmds[5] = {".vanish","Turns you invisible."}
+	cmds[6] = {".copyname [player]","Copies player's RP name to your clipboard."}
+	cmds[7] = {".copydecal [player]","Copies player's decal to your clipboard."}
+	cmds[8] = {".fsp","Freaky Skiddy Proot~ 💙"}
+	cmds[9] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
+	cmds[10] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
+	cmds[11] = {".advertise","Advertises the script (Thank you for your support!)"}
+	cmds[12] = {".skull","Skull GIF"}
+	cmds[13] = {".unskull","No Skull GIF"}
+	cmds[14] = {".wobbly [speed] [strength]","Makes your image wobbly"}
+	cmds[15] = {".unwobbly","Stops wobbly animation"}
+	cmds[16] = {"NOTICE!","For .wobbly, you need to set width and height on Morph GUI."}
+	cmds[17] = {"NOTICE!","This applies to .skull, .savedimages and .shapeshift also."}
+	cmds[18] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
+	cmds[19] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
 		ExtraAbilities.Notify(table.unpack(v))
 		wait(2)
@@ -189,3 +204,4 @@ function config.Commands.cmds()
 end
 
 ClientAdmin(config)
+ExtraAbilities.Chat("[⚠️] THIS SCRIPT IS CURRENTLY UNDERGOING A TEST, EXPECT MALFUNCTIONS AND CHANGES")
