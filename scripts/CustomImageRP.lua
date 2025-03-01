@@ -56,8 +56,10 @@ end
 
 function config.Commands.shapeshift(args)
 	local plr = ExtraAbilities.FindPlayerByName(args[1])
-	events.Morph:FireServer({string.sub(plr.Tags.CurrentImage.Value,71),Xtb.Text,Ytb.Text})
+	local id = string.sub(plr.Tags.CurrentImage.Value,71)
+	events.Morph:FireServer({id,Xtb.Text,Ytb.Text})
 	events.RPNAME:FireServer(plr.Tags.RPNAME.Value)
+	Itb.Text = id
 end
 
 function config.Commands.vanish()
