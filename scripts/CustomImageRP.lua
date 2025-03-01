@@ -84,6 +84,16 @@ function config.Commands.votekick(args)
 	events.StartVotekick:FireServer(plr,table.concat(args," "))
 end 
 
+function config.Commands.copysavedimages(args)
+	local plr = ExtraAbilities.FindPlayerByName(args[1])
+	local savedimages = plr.savedimages:GetChildren()
+	local tbl = {}
+	for i,v in savedimages do 
+		tbl[i] = '"'..v.Name..'"'
+	end 
+	toclipboard("{"..table.concat(tbl,", ").."} -- "..plr.Name.."'s saved images")
+end 
+
 local skullanim = false
 local skulldata = {
 	"14015062843",
@@ -153,14 +163,15 @@ function config.Commands.cmds()
 	cmds[6] = {".copydecal [player]","Copies player's decal to your clipboard."}
 	cmds[7] = {".fsp","Freaky Skiddy Proot~ 💙"}
 	cmds[8] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
-	cmds[9] = {".skull","Skull GIF"}
-	cmds[10] = {".stopskull","No Skull GIF"}
-	cmds[11] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
-	cmds[12] = {".stopwobbly","Stops wobbly animation"}
-	cmds[13] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
-	cmds[14] = {"NOTICE!","This applies to .skull also."}
-	cmds[15] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
-	cmds[16] = {"<<END>>","The bottom of all commands"}
+	cmds[9] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
+	cmds[10] = {".skull","Skull GIF"}
+	cmds[11] = {".stopskull","No Skull GIF"}
+	cmds[12] = {".wobblyanim [speed] [strength]","Makes your image wobbly"}
+	cmds[13] = {".stopwobbly","Stops wobbly animation"}
+	cmds[14] = {"NOTICE!","For .wobblyanim, you need to set width and height on Morph GUI."}
+	cmds[15] = {"NOTICE!","This applies to .skull also."}
+	cmds[16] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
+	cmds[17] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
 		ExtraAbilities.Notify(table.unpack(v))
 		wait(1.5)
