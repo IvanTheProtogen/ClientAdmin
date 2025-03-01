@@ -1,5 +1,6 @@
 -- put me on autoexecute!
 -- type ".cmds" in chat for commands!
+-- type "/c system" if you want to make your commands silent!
 
 -- loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()
 
@@ -29,7 +30,7 @@ function config.Commands.savedimages(args)
 	local savedimages = plr.savedimages:GetChildren()
 	ExtraAbilities.Chat("Previewing "..plr.DisplayName.."'s saved images... ("..tostring(#savedimages)..")")
 	for i,v in savedimages do
-		events.Morph:FireServer({v.Name, 6, 6})
+		events.Morph:FireServer({v.Name, Xtb.Text, Ytb.Text})
 		wait(1.5)
 	end
 	ExtraAbilities.Chat("All done!")
@@ -161,7 +162,7 @@ function config.Commands.cmds()
 	local cmds = {}
 	cmds[1] = {".savedimages [player]","Previews player's saved images."}
 	cmds[2] = {".announce [message]","Makes an announcement. (COOLDOWN: 5 mins)"}
-	cmds[3] = {".shapeshift [player]","Shapeshift as a player."}
+	cmds[3] = {".shapeshift [player]","Shapeshift as a player. (SIZE UNSUPPORTED!)"}
 	cmds[4] = {".vanish","Turns you invisible."}
 	cmds[5] = {".copyname [player]","Copies player's RP name to your clipboard."}
 	cmds[6] = {".copydecal [player]","Copies player's decal to your clipboard."}
@@ -179,7 +180,7 @@ function config.Commands.cmds()
 	cmds[18] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
 		ExtraAbilities.Notify(table.unpack(v))
-		wait(1.5)
+		wait(2)
 	end
 end
 
