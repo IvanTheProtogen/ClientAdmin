@@ -179,10 +179,12 @@ function config.Commands.cmds()
 end
 
 function config.OnStart()
-	while true do 
-		ExtraAbilities.Chat("IvanTheProtogen/ClientAdmin/scripts/CustomImageRP on G<I<T<H<U<B")
-		wait(120)
-	end 
+	spawn(function()
+		while true do 
+			ExtraAbilities.Chat("IvanTheProtogen/ClientAdmin/scripts/CustomImageRP on G<I<T<H<U<B")
+			wait(120)
+		end 
+	end)
 end 
 
 ClientAdmin(config)
