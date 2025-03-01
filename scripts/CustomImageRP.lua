@@ -2,6 +2,8 @@
 -- type ".cmds" in chat for commands!
 -- type "/c system" if you want to make your commands silent!
 
+-- THIS SCRIPT IS CURRENTLY BEING UPDATED FREQUENTLY, SO PLEASE EXPECT THAT YOU'RE GOING TO MEET UNEXPECTED CHANGES IN THE SCRIPT IN THE FUTURE
+
 -- loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()
 
 if game.PlaceId ~= 7007567268 then
