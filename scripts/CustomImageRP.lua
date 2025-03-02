@@ -262,6 +262,7 @@ spawn(function()
 	end 
 end)
 
+-- Update checker
 local function retrieve()
 	return game:HttpGet("https://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua")
 end 
@@ -284,4 +285,3 @@ spawn(function()
 end)
 
 return config
--- DELETE THIS
