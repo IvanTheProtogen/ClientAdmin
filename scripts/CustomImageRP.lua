@@ -221,3 +221,37 @@ end
 
 ClientAdmin(config)
 --ExtraAbilities.Chat("[⚠️] THIS SCRIPT IS CURRENTLY UNDERGOING A TEST, EXPECT MALFUNCTIONS AND CHANGES")
+
+-- This adds a DELICIOUS product info viewer on your Morph GUI, also fixes the ID bar.
+spawn(function()
+	local gui = Instance.new("TextLabel",game:GetService("Players").LocalPlayer:FindFirstChildOfClass("PlayerGui"):WaitForChild("Gui").Frames.MorphFrame)
+	local MS = game:GetService("MarketplaceService")
+	gui.Name = "ProductInfo"
+	gui.Size = UDim2.new(0,300,0,80)
+	gui.TextWrapped = true
+	gui.TextXAlignment = Enum.TextXAlignment.Left
+	gui.TextYAlignment = Enum.TextYAlignment.Top
+	gui.BackgroundColor3 = Color3.new(1,1,1)
+	gui.Position = UDim2.new(0,0,0,300)
+	gui.Text = "Product Info will show up here!"
+	local id = gui.Parent.MorphFrame.id
+	id.ClearTextOnFocus = false
+	id:GetPropertyChangedSignal("Text"):Connect(function()
+		gui.Text = "Loading product info..."
+		local id = tonumber(id.Text) or 0
+		local success, result = pcall(function()
+			local data = MS:GetProductInfo(id)
+			gui.Text = "Name: "..data.Name.."\nCreator: "..data.Creator.Name.." ("..tostring(data.Creator.Id)..")\nCreated: "..data.Created.."\nDescription: "..data.Description
+		end)
+		if not success then 
+			gui.Text = "Error occurred getting product info! Error:\n\n"..result
+		end
+	end)
+	gui.TextColor3 = Color3.new(1,1,1)
+	while true do
+		for x=0,1,(1/120) do
+			gui.BackgroundColor3 = Color3.fromHSV(x,1,0.5)
+			task.wait(1/20)
+		end
+	end 
+end)
