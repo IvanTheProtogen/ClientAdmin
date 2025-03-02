@@ -24,6 +24,9 @@ local spawn = task.spawn
 
 local events = game:GetService("ReplicatedStorage").Events
 
+local skullanim = false 
+local wobblyanim = false
+
 local config = {}
 config.PlaceId = 7007567268 
 config.Commands = {}
@@ -101,6 +104,9 @@ function config.Commands.fsp()
 	Itb.Text = "90803725437474"
 	Xtb.Text = "6"
 	Ytb.Text = "6"
+	wobblyanim = false 
+	skullanim = false 
+	config.Commands.wobbly({0.25, 0.5})
 end
 
 function config.Commands.votekick(args)
@@ -119,8 +125,6 @@ function config.Commands.copysavedimages(args)
 	toclipboard("{"..table.concat(tbl,", ").."} -- "..plr.Name.."'s saved images")
 end 
 
-local skullanim = false 
-local wobblyanim = false
 local skulldata = {
 	"14015062843",
 	"14014950690",
@@ -256,3 +260,5 @@ spawn(function()
 		end
 	end 
 end)
+
+return config
