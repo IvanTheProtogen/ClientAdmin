@@ -12,6 +12,7 @@ if game.PlaceId ~= 7007567268 then
 end
 
 ClientAdmin=loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/main.lua"))();
+local ExtraAbilities=getgenv().ExtraAbilities or loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ExtraAbilities/raw/main/main.lua"))();
 
 local morphFrame = game:GetService("Players").LocalPlayer:FindFirstChildOfClass("PlayerGui").Gui.Frames.MorphFrame.MorphFrame
 
@@ -261,4 +262,26 @@ spawn(function()
 	end 
 end)
 
+local function retrieve()
+	return game:HttpGet("https://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua")
+end 
+spawn(function()
+	local old = retrieve()
+	while task.wait(10) do 
+		local new = retrieve() 
+		if new ~= old then 
+			while true do 
+				spawn(function()
+					local resp = ExtraAbilities.NotifyRequest("NEW UPDATE!", "A new update came out! Do you want to rejoin to apply changes?", "LATER", "REJOIN")
+					if resp == "REJOIN" then 
+						game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+					end 
+				end)
+				task.wait(120) 
+			end 
+		end 
+	end 
+end)
+
 return config
+-- DELETE THIS
