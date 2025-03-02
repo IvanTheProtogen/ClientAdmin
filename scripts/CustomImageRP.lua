@@ -5,6 +5,7 @@
 -- THIS SCRIPT IS CURRENTLY BEING UPDATED FREQUENTLY, SO PLEASE EXPECT THAT YOU'RE GOING TO MEET UNEXPECTED CHANGES IN THE SCRIPT IN THE FUTURE
 
 -- loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()
+-- FOR GOD'S SAKE, USE THE LOADSTRING, NOT THE ENITRE CODE!!!!!
 
 if game.PlaceId ~= 7007567268 then
 	return
@@ -96,7 +97,7 @@ end
 
 function config.Commands.fsp()
 	events.Morph:FireServer({"90803725437474", 6, 6})
-	events.RPNAME:FireServer("Freaky Skiddy Proot~ 💙")
+	events.RPNAME:FireServer("Freaky Skiddy Proot~ 💙".."\n".."(dont hesitate to ask for the script)")
 	Itb.Text = "90803725437474"
 	Xtb.Text = "6"
 	Ytb.Text = "6"
