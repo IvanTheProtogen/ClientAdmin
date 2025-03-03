@@ -284,5 +284,5 @@ spawn(function()
 	end 
 end)
 
-return config
 ExtraAbilities.Notify(".cmds", "Type .cmds in chat for commands!")
+return config
