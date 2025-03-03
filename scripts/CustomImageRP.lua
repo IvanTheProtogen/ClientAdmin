@@ -101,7 +101,8 @@ end
 
 function config.Commands.fsp() -- there has to be a syntax error somewhere...
 	events.Morph:FireServer({"90803725437474", 6, 6})
-	events.RPNAME:FireServer([[HorทySkiddyProot~\n(donthesitatetoask forthescript)]])
+	events.RPNAME:FireServer([[HorทySkiddyProot~
+(donthesitatetoask forthescript)]])
 	Itb.Text = "90803725437474"
 	Xtb.Text = "6"
 	Ytb.Text = "6"
