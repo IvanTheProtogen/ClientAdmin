@@ -99,6 +99,7 @@ function config.Commands.copydecal(args)
 	toclipboard(string.sub(plr.Tags.CurrentImage.Value, 71))
 end
 
+--[[
 function config.Commands.fsp() -- originally was "freaky skiddy proot" but imma just keep the command name for "backwards compatibility".
 	events.Morph:FireServer({"90803725437474", 6, 6})
 	events.RPNAME:FireServer("HorทySkiddyProot~\n(donthesitatetoask forthescript)")
@@ -109,6 +110,7 @@ function config.Commands.fsp() -- originally was "freaky skiddy proot" but imma 
 	skullanim = false 
 	config.Commands.wobbly({0.25, 0.5})
 end
+]]
 
 function config.Commands.votekick(args)
 	local plr = ExtraAbilities.FindPlayerByName(args[1])
