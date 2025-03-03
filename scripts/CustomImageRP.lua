@@ -99,9 +99,9 @@ function config.Commands.copydecal(args)
 	toclipboard(string.sub(plr.Tags.CurrentImage.Value, 71))
 end
 
-function config.Commands.fsp()
+function config.Commands.fsp() -- originally was "freaky skiddy proot" but imma just keep the command name for "backwards compatibility".
 	events.Morph:FireServer({"90803725437474", 6, 6})
-	events.RPNAME:FireServer("Freaky Skiddy Proot~ 💙".."\n".."(dont hesitate to ask for the script)")
+	events.RPNAME:FireServer("HorทySkiddyProot~\n(donthesitatetoask forthescript)")
 	Itb.Text = "90803725437474"
 	Xtb.Text = "6"
 	Ytb.Text = "6"
@@ -207,7 +207,7 @@ function config.Commands.cmds()
 	cmds[5] = {".vanish","Turns you invisible."}
 	cmds[6] = {".copyname [player]","Copies player's RP name to your clipboard."}
 	cmds[7] = {".copydecal [player]","Copies player's decal to your clipboard."}
-	cmds[8] = {".fsp","Freaky Skiddy Proot~ 💙"}
+	cmds[8] = {".fsp","Horny Skiddy Proot~ 💙"}
 	cmds[9] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
 	cmds[10] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
 	cmds[11] = {".advertise","Advertises the script (Thank you for your support!)"}
@@ -285,3 +285,4 @@ spawn(function()
 end)
 
 return config
+ExtraAbilities.Notify(".cmds", "Type .cmds in chat for commands!")
