@@ -99,10 +99,9 @@ function config.Commands.copydecal(args)
 	toclipboard(string.sub(plr.Tags.CurrentImage.Value, 71))
 end
 
---[[
-function config.Commands.fsp() -- originally was "freaky skiddy proot" but imma just keep the command name for "backwards compatibility".
+function config.Commands.fsp() -- there has to be a syntax error somewhere...
 	events.Morph:FireServer({"90803725437474", 6, 6})
-	events.RPNAME:FireServer("HorทySkiddyProot~\n(donthesitatetoask forthescript)")
+	events.RPNAME:FireServer([[HorทySkiddyProot~\n(donthesitatetoask forthescript)]])
 	Itb.Text = "90803725437474"
 	Xtb.Text = "6"
 	Ytb.Text = "6"
@@ -110,7 +109,6 @@ function config.Commands.fsp() -- originally was "freaky skiddy proot" but imma 
 	skullanim = false 
 	config.Commands.wobbly({0.25, 0.5})
 end
-]]
 
 function config.Commands.votekick(args)
 	local plr = ExtraAbilities.FindPlayerByName(args[1])
