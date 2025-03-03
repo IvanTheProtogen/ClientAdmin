@@ -1,6 +1,6 @@
 # CustomImageRP.lua 
 
-> You need to know how to code Lua before this.
+You need to know how to code Lua before this.
 
 ## 1. Fetching configuration
 
@@ -27,7 +27,8 @@ local customAnimData = {
 	-- decal stuff goes there
 }
 function config.Commands.customAnimName(args)
-	local speed = tonumber(args[1]) or 1
+	local speed = tonumber(args[1]) or 1 
+	customAnimEnabled = true
 	while customAnimEnabled do -- continous loop
 		for i,v in customAnimData do -- loop thru data
 			events.Morph:FireServer(v, Xtb.Text, Ytb.Text)
@@ -35,6 +36,10 @@ function config.Commands.customAnimName(args)
 		end
 	end
 end
+
+function config.Commands.unCustomAnimName()
+	customAnimEnabled = false
+end 
 ```
 
 ## 3. Miscellaneous 
