@@ -7,11 +7,17 @@
 1. Garry's Mod proto (NSFW)
 2. Assassin proto (NSFW)
 3. STARDUST MADNESS!!!
+4. Airplane 
+5. Truck-kun~ 
+6. Volcano!!!!
+7. OH NO IT'S THE CROSS-
 ]]
 
 -- .size [size]
 -- .mode [mode_id]
 -- .stop
+-- .speed [speed]
+-- .value [x]
 
 local httpsvc = game:GetService("HttpService")
 local json = {}
@@ -25,18 +31,24 @@ end
 if not table.find(listfiles(""),"bloxbizstuff.cfg") then
     writefile("bloxbizstuff.cfg",json.encode({
         ["mode"] = 1,
-        ["size"] = 1
+        ["size"] = 1,
+        ["speed"] = 1,
     }))
 end 
 
-local data = json.decode(readfile("bloxbizstuff.cfg"))
+local data = {}
+local suc,res = pcall(json.decode,readfile("bloxbizstuff.cfg"))
+if suc then 
+    data = res 
+end 
 
 local remote = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnApplyOutfit 
 local remote2 = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnResetOutfit
 local x = 0
-local size = data.size
+local size = data.size or 1 
 local active = true 
-local mode = data.mode
+local mode = data.mode or 1 
+local speed = data.speed or 1
 
 task.spawn(function()
 while active do 
@@ -377,7 +389,7 @@ args = {
         ["WalkAnimation"] = 0,
         ["Accessories"] = {
             {
-                ["Rotation"] = Vector3.new(0, 0+x*3, 0),
+                ["Rotation"] = Vector3.new(0, 0+x*5, 0),
                 ["AssetId"] = 7903127083,
                 ["Position"] = Vector3.new(0, -608.5, 0),
                 ["Scale"] = Vector3.new(500, 500, 500),
@@ -390,14 +402,14 @@ args = {
         ["LeftLegColor"] = nil --[[Color3]],
         ["JumpAnimation"] = 0,
         ["ProportionScale"] = 1,
-        ["BodyTypeScale"] = 0.3,
+        ["BodyTypeScale"] = 0.3*size,
         ["ClimbAnimation"] = 0,
         ["LeftArmColor"] = nil --[[Color3]],
         ["Face"] = 0,
         ["Pants"] = 0,
         ["RightArmColor"] = nil --[[Color3]],
-        ["DepthScale"] = 1,
-        ["WidthScale"] = 1,
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
         ["SwimAnimation"] = 0,
         ["RightArm"] = 0,
         ["GraphicTShirt"] = 0,
@@ -410,13 +422,193 @@ args = {
         ["TorsoColor"] = nil --[[Color3]],
         ["IdleAnimation"] = 0,
         ["LeftArm"] = 0,
-        ["HeadScale"] = 1,
-        ["HeightScale"] = 1,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+} 
+else if mode == 4 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 0,
+        ["Accessories"] = {
+            [1] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 112373193084321,
+                ["Position"] = Vector3.new(0, -58, 10),
+                ["Scale"] = Vector3.new(50,50,50),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 0,
+        ["ProportionScale"] = 1,
+        ["BodyTypeScale"] = 0.30000001192092896*size,
+        ["ClimbAnimation"] = 0,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 144075659,
+        ["Pants"] = 301811279,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 0,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 607785314,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 0,
+        ["Torso"] = 48474356,
+        ["FallAnimation"] = 0,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 0,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+} 
+else if mode == 5 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 0,
+        ["Accessories"] = {
+            [1] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 11287944484,
+                ["Position"] = Vector3.new(0, 5,0),
+                ["Scale"] = Vector3.new(4,4,4),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 0,
+        ["ProportionScale"] = 1,
+        ["BodyTypeScale"] = 0.30000001192092896*size,
+        ["ClimbAnimation"] = 0,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 144075659,
+        ["Pants"] = 301811279,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 0,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 607785314,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 0,
+        ["Torso"] = 48474356,
+        ["FallAnimation"] = 0,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 0,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
         ["HeadColor"] = nil --[[Color3]],
         ["LeftLeg"] = 0
     }
 }
-else args={} end end end
+else if mode == 6 then 
+args = {
+    {
+        ["WalkAnimation"] = 0,
+        ["Accessories"] = {
+            [1] = {
+                ["Rotation"] = Vector3.new(-15, 0, 0),
+                ["AssetId"] = 4797567443,
+                ["Position"] = Vector3.new(0,30,-25),
+                ["Scale"] = Vector3.new(100,100,100),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 0,
+        ["ProportionScale"] = 1,
+        ["BodyTypeScale"] = 0.30000001192092896*size,
+        ["ClimbAnimation"] = 0,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 144075659,
+        ["Pants"] = 301811279,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 0,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 607785314,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 0,
+        ["Torso"] = 48474356,
+        ["FallAnimation"] = 0,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 0,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+} 
+else if mode == 7 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 0,
+        ["Accessories"] = {
+            [1] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 112885463207742,
+                ["Position"] = Vector3.new(0,-375,0),
+                ["Scale"] = Vector3.new(300,300,300),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 0,
+        ["ProportionScale"] = 1,
+        ["BodyTypeScale"] = 0.30000001192092896*size,
+        ["ClimbAnimation"] = 0,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 144075659,
+        ["Pants"] = 301811279,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 0,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 607785314,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 0,
+        ["Torso"] = 48474356,
+        ["FallAnimation"] = 0,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 0,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+}
+else args={} end end end end end end end
 
 remote:FireServer(unpack(args))
 pcall(function()
@@ -425,7 +617,7 @@ humanoid.WalkSpeed = 16*size
 humanoid.JumpPower = 50*size
 workspace.Gravity = 196.1999969482422*size
 end)
-x=x+5
+x=x+(5*speed)
 task.wait(1/20)
 end
 end)
@@ -452,6 +644,16 @@ end
 function config.Commands.stop()
     active = false
     config.Commands = {}
-end
+end 
+
+function config.Commands.speed(args)
+    speed = tonumber(args[1]) or 1 
+    data.speed = speed 
+    writefile("bloxbizstuff.cfg", json.encode(data))
+end 
+
+function config.Commands.value(args)
+    x = tonumber(args[1]) or 0 
+end 
 
 ClientAdmin(config)
