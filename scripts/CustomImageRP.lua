@@ -2,8 +2,6 @@
 -- type ".cmds" in chat for commands!
 -- type "/c system" if you want to make your commands silent!
 
--- THIS SCRIPT IS CURRENTLY BEING UPDATED FREQUENTLY, SO PLEASE EXPECT THAT YOU'RE GOING TO MEET UNEXPECTED CHANGES IN THE SCRIPT IN THE FUTURE
-
 -- loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()
 -- FOR GOD'S SAKE, USE THE LOADSTRING, NOT THE ENITRE CODE!!!!!
 
@@ -101,8 +99,7 @@ end
 
 function config.Commands.fsp() -- there has to be a syntax error somewhere...
 	events.Morph:FireServer({"90803725437474", 6, 6})
-	events.RPNAME:FireServer([[HorทySkiddyProot~
-(donthesitatetoask forthescript)]])
+	events.RPNAME:FireServer([[Horny Skiddy Proot~ 💙]])
 	Itb.Text = "90803725437474"
 	Xtb.Text = "6"
 	Ytb.Text = "6"
@@ -208,7 +205,7 @@ function config.Commands.cmds()
 	cmds[5] = {".vanish","Turns you invisible."}
 	cmds[6] = {".copyname [player]","Copies player's RP name to your clipboard."}
 	cmds[7] = {".copydecal [player]","Copies player's decal to your clipboard."}
-	cmds[8] = {".fsp","Horny Skiddy Proot~ 💙"}
+	cmds[8] = {".fsp","Freaky Skiddy Proot~ 💙"}
 	cmds[9] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
 	cmds[10] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
 	cmds[11] = {".advertise","Advertises the script (Thank you for your support!)"}
