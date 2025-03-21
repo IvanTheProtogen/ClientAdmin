@@ -6,7 +6,7 @@
 --[[
 1. Garry's Mod proto (NSFW)
 2. Assassin proto (NSFW)
-3. STARDUST MADNESS!!!
+3. STARDUST MADNESS!!! (disrupting)
 4. Airplane 
 5. Truck-kun~ 
 6. Volcano!!!!
