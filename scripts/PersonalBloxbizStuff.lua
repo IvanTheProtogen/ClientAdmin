@@ -10,7 +10,8 @@
 4. Airplane 
 5. Truck-kun~ 
 6. Volcano!!!!
-7. OH NO IT'S THE CROSS-
+7. OH NO IT'S THE CROSS- 
+8. TONK
 ]]
 
 -- .size [size]
@@ -608,7 +609,52 @@ args = {
         ["LeftLeg"] = 0
     }
 }
-else args={} end end end end end end end
+else if mode == 8 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 0,
+        ["Accessories"] = {
+            [1] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 14952674811,
+                ["Position"] = Vector3.new(0, 7.25, 0),
+                ["Scale"] = Vector3.new(5, 5, 5),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 0,
+        ["ProportionScale"] = 1,
+        ["BodyTypeScale"] = 0.30000001192092896,
+        ["ClimbAnimation"] = 0,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 0,
+        ["Pants"] = 0,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1,
+        ["WidthScale"] = 1,
+        ["SwimAnimation"] = 0,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 0,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 0,
+        ["Torso"] = 0,
+        ["FallAnimation"] = 0,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 0,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1,
+        ["HeightScale"] = 1,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+}
+else args={} end end end end end end end end
 
 remote:FireServer(unpack(args))
 pcall(function()
