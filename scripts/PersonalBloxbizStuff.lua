@@ -6,12 +6,13 @@
 --[[
 1. Garry's Mod proto (NSFW)
 2. Assassin proto (NSFW)
-3. STARDUST MADNESS!!! (disrupting)
+3. STARDUST MADNESS!!! (disruptive)
 4. Airplane 
 5. Truck-kun~ 
 6. Volcano!!!!
 7. OH NO IT'S THE CROSS- 
-8. TONK
+8. TONK 
+9. Spike World (disruptive)
 ]]
 
 -- .size [size]
@@ -654,7 +655,52 @@ args = {
         ["LeftLeg"] = 0
     }
 }
-else args={} end end end end end end end end
+else if mode == 9 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 0,
+        ["Accessories"] = {
+            [1] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 17893420151,
+                ["Position"] = Vector3.new(0, 150, 0),
+                ["Scale"] = Vector3.new(1000, 1000, 1000),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hair
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 0,
+        ["ProportionScale"] = 1,
+        ["BodyTypeScale"] = 0.30000001192092896*size,
+        ["ClimbAnimation"] = 0,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 0,
+        ["Pants"] = 0,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 0,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 0,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 0,
+        ["Torso"] = 0,
+        ["FallAnimation"] = 0,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 0,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+}
+else args={} end end end end end end end end end
 
 remote:FireServer(unpack(args))
 pcall(function()
