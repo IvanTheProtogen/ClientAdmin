@@ -748,4 +748,6 @@ function config.Commands.value(args)
     x = tonumber(args[1]) or 0 
 end 
 
+getgenv().bloxbizstuff = config
+
 ClientAdmin(config)
