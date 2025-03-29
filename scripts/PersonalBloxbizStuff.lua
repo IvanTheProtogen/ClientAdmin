@@ -13,6 +13,7 @@
 7. OH NO IT'S THE CROSS- 
 8. TONK 
 9. Spike World (disruptive)
+10. Tiger Shark Femboy
 ]]
 
 -- .size [size]
@@ -700,7 +701,116 @@ args = {
         ["LeftLeg"] = 0
     }
 }
-else args={} end end end end end end end end end
+else if mode == 10 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 5319909330,
+        ["Accessories"] = {
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 5213475563,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 116222730244443,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 8995513049,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 5213453342,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 15356791013,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Front
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 18554332862,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hair
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 12022550960,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Face
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 5213472330,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Back
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0+(x*6), 0),
+                ["AssetId"] = 75885927417508,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 5319917561,
+        ["ProportionScale"] = 0.5,
+        ["BodyTypeScale"] = 0.30000001192092896*size,
+        ["ClimbAnimation"] = 5319931619,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 0,
+        ["Pants"] = 11834261731,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 5319927054,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 11834254247,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 5319900634,
+        ["Torso"] = 48474356,
+        ["FallAnimation"] = 5319914476,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 5319922112,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+}
+else args={} end end end end end end end end end end
 
 remote:FireServer(unpack(args))
 pcall(function()
