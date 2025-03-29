@@ -771,7 +771,7 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Back
             },
             {
-                ["Rotation"] = Vector3.new(0, 0+(x*6), 0),
+                ["Rotation"] = Vector3.new(0, 0+(x*(3+(2/3))), 0),
                 ["AssetId"] = 75885927417508,
                 ["Position"] = Vector3.new(0, 0, 0),
                 ["Scale"] = Vector3.new(1, 1, 1),
