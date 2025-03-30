@@ -866,7 +866,7 @@ args = {
             },
             {
                 ["Rotation"] = Vector3.new(0, 0, 0),
-                ["AssetId"] = 12022550960,
+                ["AssetId"] = 11943904421,
                 ["Position"] = Vector3.new(0, 0, 0),
                 ["Scale"] = Vector3.new(1, 1, 1),
                 ["IsLayered"] = false,
