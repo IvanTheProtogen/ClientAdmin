@@ -998,10 +998,10 @@ args = {
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Hat
             },
-            [9] = {
-                ["Rotation"] = Vector3.new(0, 0, 0),
+            [9] = { -- aww the tail wag :3
+                ["Rotation"] = Vector3.new(0, math.sin(math.rad(x*2))*20, 0),
                 ["AssetId"] = 7485974573,
-                ["Position"] = Vector3.new(0, 0, 0),
+                ["Position"] = Vector3.new(math.sin(math.rad(x*2))*0.5, 0, 0),
                 ["Scale"] = Vector3.new(1, 1, 1),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
