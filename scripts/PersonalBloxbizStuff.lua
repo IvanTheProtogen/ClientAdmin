@@ -1092,12 +1092,14 @@ args = {
 else args={} end 
 
 remote:FireServer(unpack(args))
+if affectenv then 
 pcall(function()
 local humanoid = game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid")
 humanoid.WalkSpeed = 16*size
 humanoid.JumpPower = 50*size
 workspace.Gravity = 196.1999969482422*size
 end)
+end 
 x=x+(5*speed)
 task.wait(1/20)
 end
