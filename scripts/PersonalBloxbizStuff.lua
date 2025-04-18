@@ -23,6 +23,7 @@
 -- .stop
 -- .speed [speed]
 -- .value [x]
+-- .affectenv [boolean]
 
 local httpsvc = game:GetService("HttpService")
 local json = {}
@@ -38,6 +39,7 @@ if not table.find(listfiles(""),"bloxbizstuff.cfg") then
         ["mode"] = 1,
         ["size"] = 1,
         ["speed"] = 1,
+        ["affectenv"] = true
     }))
 end 
 
@@ -53,7 +55,8 @@ local x = 0
 local size = data.size or 1 
 local active = true 
 local mode = data.mode or 1 
-local speed = data.speed or 1
+local speed = data.speed or 1 
+local affectenv = data.affectenv or true 
 
 task.spawn(function()
 while active do 
@@ -1132,6 +1135,19 @@ end
 
 function config.Commands.value(args)
     x = tonumber(args[1]) or 0 
+end 
+
+function config.Commands.affectenv(args)
+    input = args[1]
+    if input == "0" then 
+        affectenv = false 
+    elseif input == "1" then 
+        affectenv = true 
+    else 
+        affectenv = not affectenv 
+    end 
+    data.affectenv = affectenv
+    writefile("bloxbizstuff.cfg", json.encode(data))
 end 
 
 getgenv().bloxbizstuff = config
