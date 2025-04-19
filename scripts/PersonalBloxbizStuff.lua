@@ -1332,6 +1332,14 @@ args = {
                 ["Scale"] = Vector3.new(1, 1, 1),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
+            },
+            [9] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 17165122954,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Back
             }
         },
         ["RightLegColor"] = nil --[[Color3]],
