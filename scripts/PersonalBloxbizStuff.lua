@@ -17,6 +17,7 @@
 11. Tiger Shark Femboy (NSFW)
 12. Better Garry's Mod proto (NSFW)
 13. Better Garry's Mod proto but female (NSFW)
+14. Better Garry's Mod proto but for newer PopMall
 ]]
 
 -- .size [size]
@@ -1220,6 +1221,115 @@ args = {
                 ["AssetId"] = 11420292665,
                 ["Position"] = Vector3.new(0.8,0.9,-1.5),
                 ["Scale"] = Vector3.new(0.8*0.6,0.8*0.6,0.8*0.6),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            }
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 0,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 18538153691,
+        ["ProportionScale"] = 0.5,
+        ["BodyTypeScale"] = 0.30000001192092896*size,
+        ["ClimbAnimation"] = 5319931619,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 0,
+        ["Pants"] = 11752024081,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 5319927054,
+        ["RightArm"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 11752023381,
+        ["RightLeg"] = 0,
+        ["RunAnimation"] = 5319900634,
+        ["Torso"] = 48474356,
+        ["FallAnimation"] = 18538164337,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 619511648,
+        ["LeftArm"] = 0,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+} 
+elseif mode == 14 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 5319909330,
+        ["Accessories"] = {
+            [1] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 12114581505,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Front
+            },
+            [2] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 14103139737,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Back
+            },
+            [3] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 14991646689,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Neck
+            },
+            [4] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 12114570675,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Shoulder
+            },
+            [5] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 15295909184,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+            [6] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 12114574600,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Shoulder
+            },
+            [7] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 607702162,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+            [8] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 11714797755,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+            [9] = {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 7485974573,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             }
