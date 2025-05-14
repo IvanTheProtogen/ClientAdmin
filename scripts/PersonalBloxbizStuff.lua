@@ -17,7 +17,8 @@
 11. Tiger Shark Femboy (NSFW)
 12. Better Garry's Mod proto (NSFW)
 13. Better Garry's Mod proto but female (NSFW)
-14. Better Garry's Mod proto but for newer PopMall
+14. Better Garry's Mod proto but for newer PopMall 
+15. glitch glitch hack hack (disruptive)
 ]]
 
 -- .size [size]
@@ -1370,6 +1371,61 @@ args = {
         ["HeadScale"] = 1*size,
         ["HeightScale"] = 1*size,
         ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 0
+    }
+}
+elseif mode == 15 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 0,
+        ["MoodAnimation"] = 0,
+        ["Face"] = 0,
+        ["JumpAnimation"] = 0,
+        ["BodyTypeScale"] = 0.30000001192092896,
+        ["ClimbAnimation"] = 0,
+        ["Shirt"] = 0,
+        ["ProportionScale"] = 1,
+        ["Pants"] = 0,
+        ["WidthScale"] = 1,
+        ["SwimAnimation"] = 0,
+        ["RightArm"] = 0,
+        ["LeftArm"] = 0,
+        ["Head"] = 0,
+        ["IdleAnimation"] = 0,
+        ["GraphicTShirt"] = 0,
+        ["RunAnimation"] = 0,
+        ["Torso"] = 0,
+        ["FallAnimation"] = 0,
+        ["Accessories"] = {
+            {
+                ["Rotation"] = Vector3.new(math.random(-180,180), math.random(-180,180), math.random(-180,180)),
+                ["AssetId"] = 119881351121634,
+                ["Position"] = Vector3.new(math.random(-50,50), math.random(-50,50), math.random(-50,50)),
+                ["Scale"] = Vector3.new(100,100,0.1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Front
+            },
+				{
+                ["Rotation"] = Vector3.new(math.random(-180,180), math.random(-180,180), math.random(-180,180)),
+                ["AssetId"] = 98202602400511,
+                ["Position"] = Vector3.new(math.random(-50,50), math.random(-50,50), math.random(-50,50)),
+                ["Scale"] = Vector3.new(100,100,0.1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Front
+            },
+				{
+                ["Rotation"] = Vector3.new(math.random(-180,180), math.random(-180,180), math.random(-180,180)),
+                ["AssetId"] = 11200544814,
+                ["Position"] = Vector3.new(0,0,180),
+                ["Scale"] = Vector3.new(100,100,400),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Back
+            }
+        },
+        ["RightLeg"] = 0,
+        ["HeadScale"] = 1,
+        ["HeightScale"] = 1,
+        ["DepthScale"] = 1,
         ["LeftLeg"] = 0
     }
 }
