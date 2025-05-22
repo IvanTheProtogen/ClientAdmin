@@ -1334,7 +1334,7 @@ args = {
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
-            [9] = {
+            [10] = {
                 ["Rotation"] = Vector3.new(0, 0, 0),
                 ["AssetId"] = 17165122954,
                 ["Position"] = Vector3.new(0, 0, 0),
