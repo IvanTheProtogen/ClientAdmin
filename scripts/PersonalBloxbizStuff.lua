@@ -1013,9 +1013,9 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
             [10] = {
-                ["Rotation"] = Vector3.new(0, 180, 180),
+                ["Rotation"] = Vector3.new(0-(math.tanh(math.sin(math.rad(x*1.5))*5)*2), 180, 180),
                 ["AssetId"] = 123708205722564,
-                ["Position"] = Vector3.new(0, 0.3, -2.2),
+                ["Position"] = Vector3.new(0, 0.32+(math.tanh(math.sin(math.rad(x*1.5))*5)*0.02), -2.2),
                 ["Scale"] = Vector3.new(2/3, 2/3, 3/4),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
