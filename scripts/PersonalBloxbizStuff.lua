@@ -28,7 +28,7 @@
 -- .value [x]
 -- .affectenv [boolean]
 
--- VERSION: a88c50a5-6ed2-45ac-96a3-0f00d324d0f3
+-- VERSION: 1ff3fb9d-bcb7-4d35-82f4-4be64e206654
 
 local httpsvc = game:GetService("HttpService")
 local json = {}
@@ -1015,7 +1015,7 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
             [10] = {
-                ["Rotation"] = Vector3.new(0-(math.tanh(math.sin(math.rad(x*1.5))*5)*110), 180, 180),
+                ["Rotation"] = Vector3.new(0-(math.tanh(math.sin(math.rad(x*1.5))*5)*10), 180, 180),
                 ["AssetId"] = 123708205722564,
                 ["Position"] = Vector3.new(0, 0.34+(math.tanh(math.sin(math.rad(x*1.5))*5)*0.04), -2.2),
                 ["Scale"] = Vector3.new(2/3, 2/3, 3/4),
