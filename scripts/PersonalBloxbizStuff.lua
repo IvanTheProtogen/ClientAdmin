@@ -111,7 +111,7 @@ __springOri.Parent = __part
 __springOri.Attachment0 = __partAttach
 __springOri.Attachment1 = __torsoAttach
 __springOri.Responsiveness = 50
-__springOri.MaxTorque = 35
+__springOri.MaxTorque = 45
 __springOri.RigidityEnabled = false
 end 
 return {Position = __torso.CFrame:ToObjectSpace(__part.CFrame).Position, Rotation = __part.Rotation}
@@ -1089,7 +1089,7 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
             [10] = {
-                ["Rotation"] = pp.Rotation+Vector3.new(0, 180, 180),
+                ["Rotation"] = pp.Rotation-Vector3.new(0, 180, 180),
                 ["AssetId"] = 123708205722564,
                 ["Position"] = pp.Position+Vector3.new(0, 0.34, -2.2),
                 ["Scale"] = Vector3.new(2/3, 2/3, 3/4),
