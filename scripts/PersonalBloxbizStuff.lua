@@ -85,7 +85,7 @@ __part.CanTouch = false
 __part.Anchored = false
 __part.Size = Vector3.new(2/3,2/3,3/4)
 __part.Massless = true 
-__part.Transparency = 0
+__part.Transparency = 0.5
 end 
 if __torsoAttach and __torsoAttach:IsDescendantOf(game) then else 
 __torsoAttach = Instance.new("Attachment")
@@ -114,8 +114,17 @@ __springOri.Responsiveness = 50
 __springOri.MaxTorque = 35
 __springOri.RigidityEnabled = false
 end 
-return __part
+return {Position = (__torso.Position - __part.Position), Rotation = __part.Rotation}
 end 
+
+local function delpp()
+if __part or __torsoAttach or __partAttach or __ballSocket or __springOri or __torso then 
+for _,v in {__part,__torsoAttach,__partAttach,__ballSocket,__springOri,__torso} do 
+pcall(v.Destroy,v)
+end 
+__part,__torsoAttach,__partAttach,__ballSocket,__springOri,__torso = nil,nil,nil,nil,nil,nil 
+end
+end
 
 local remote = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnApplyOutfit 
 local remote2 = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnResetOutfit
@@ -128,6 +137,7 @@ local affectenv = data.affectenv or true
 
 task.spawn(function()
 while active do 
+if mode ~= 12 then delpp() end
 local args 
 if mode == 1 then 
 args = {
