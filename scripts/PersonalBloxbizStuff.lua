@@ -114,15 +114,15 @@ __springOri.Responsiveness = 50
 __springOri.MaxTorque = 35
 __springOri.RigidityEnabled = false
 end 
-return {Position = (__torso.Position - __part.Position), Rotation = __part.Rotation}
+return {Position = __torso.CFrame:ToObjectSpace(__part.CFrame).Position, Rotation = __part.Rotation}
 end 
 
 local function delpp()
-if __part or __torsoAttach or __partAttach or __ballSocket or __springOri or __torso then 
-for _,v in {__part,__torsoAttach,__partAttach,__ballSocket,__springOri,__torso} do 
+if __part or __torsoAttach or __partAttach or __ballSocket or __springOri then 
+for _,v in {__part,__torsoAttach,__partAttach,__ballSocket,__springOri} do 
 pcall(v.Destroy,v)
 end 
-__part,__torsoAttach,__partAttach,__ballSocket,__springOri,__torso = nil,nil,nil,nil,nil,nil 
+__part,__torsoAttach,__partAttach,__ballSocket,__springOri = nil,nil,nil,nil,nil 
 end
 end
 
