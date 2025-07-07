@@ -56,6 +56,67 @@ if suc then
     data = res 
 end 
 
+
+local lp = game.Players.LocalPlayer
+local char 
+local function getchar()
+	char = char or lp.Character or lp.CharacterAdded:Wait() or lp.Character 
+	return char 
+end
+
+-- IGNORE THIS MESS PLEASE
+local __part,__torsoAttach,__partAttach,__ballSocket,__springOri,__torso
+local function forpp()
+if __torso and __torso:IsDescendantOf(game) then else 
+while not __torso do
+getchar()
+__torso = char:FindFirstChild("LowerTorso") or char:FindFirstChild("Torso")
+task.wait(0.1)
+end 
+end 
+if __part and __part:IsDescendantOf(game) then else 
+local __part = Instance.new("Part")
+__part.Name = "_test"
+__part.Parent = workspace
+__part.CFrame = __torso.CFrame:ToWorldSpace(CFrame.new(0, -0.67, -1))
+__part.CanCollide = false
+__part.CanQuery = false
+__part.CanTouch = false
+__part.Anchored = false
+__part.Size = Vector3.new(2/3,2/3,3/4)
+__part.Massless = true 
+__part.Transparency = 0
+end 
+if __torsoAttach and __torsoAttach:IsDescendantOf(game) then else 
+local __torsoAttach = Instance.new("Attachment")
+__torsoAttach.Parent = __torso
+__torsoAttach.Position = Vector3.new(0, -0.67, -0.5) -- Offset from torso center
+end 
+if __partAttach and __partAttach:IsDescendantOf(game) then else 
+local __partAttach = Instance.new("Attachment")
+__partAttach.Parent = __part
+__partAttach.Position = Vector3.new(0, 0, 1)
+end 
+if __ballSocket and __ballSocket:IsDescendantOf(game) then else 
+local __ballSocket = Instance.new("BallSocketConstraint")
+__ballSocket.Parent = __part
+__ballSocket.Attachment0 = __torsoAttach
+__ballSocket.Attachment1 = __partAttach
+__ballSocket.LimitsEnabled = false
+__ballSocket.UpperAngle = 0
+end 
+if __springOri and __springOri:IsDescendantOf(game) then else 
+local __springOri = Instance.new("AlignOrientation")
+__springOri.Parent = __part
+__springOri.Attachment0 = __partAttach
+__springOri.Attachment1 = __torsoAttach
+__springOri.Responsiveness = 50
+__springOri.MaxTorque = 35
+__springOri.RigidityEnabled = false
+end 
+return {Position=__part.Position, Rotation=__part.Rotation} 
+end 
+
 local remote = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnApplyOutfit 
 local remote2 = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnResetOutfit
 local x = 0
@@ -1017,9 +1078,9 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
             [10] = {
-                ["Rotation"] = Vector3.new(0-(math.tanh(math.sin(math.rad(x*1.5))*5)*10), 180, 180),
+                ["Rotation"] = Vector3.new(0, 180, 180),
                 ["AssetId"] = 123708205722564,
-                ["Position"] = Vector3.new(0, 0.34+(math.tanh(math.sin(math.rad(x*1.5))*5)*0.04), -2.2),
+                ["Position"] = Vector3.new(0, 0.34, -2.2),
                 ["Scale"] = Vector3.new(2/3, 2/3, 3/4),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
