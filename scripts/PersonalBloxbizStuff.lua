@@ -90,7 +90,7 @@ end
 if __torsoAttach and __torsoAttach:IsDescendantOf(game) then else 
 __torsoAttach = Instance.new("Attachment")
 __torsoAttach.Parent = __torso
-__torsoAttach.Position = Vector3.new(0, -0.67, -1) -- Offset from torso center
+__torsoAttach.Position = Vector3.new((2/3)/2, 0.5, 0.8) -- Offset from torso center
 end 
 if __partAttach and __partAttach:IsDescendantOf(game) then else 
 __partAttach = Instance.new("Attachment")
@@ -111,10 +111,25 @@ __springOri.Parent = __part
 __springOri.Attachment0 = __partAttach
 __springOri.Attachment1 = __torsoAttach
 __springOri.Responsiveness = 50
-__springOri.MaxTorque = 45
+__springOri.MaxTorque = 50
 __springOri.RigidityEnabled = false
 end 
-return {Position = __torso.CFrame:ToObjectSpace(__part.CFrame).Position, Rotation = __part.Rotation}
+local trot = __torso.Rotation
+local pos =  __part.CFrame
+local rot = __part.Rotation 
+rot = Vector3.new(trot.X-rot.X, trot.Y-rot.Y, trot.Z-rot.Z)
+pos = pos:ToWorldSpace(CFrame.new(
+	(-math.cos(math.rad(rot.Y))*((2/3)/2)),
+	0,
+	(-math.sin(math.rad(rot.Y))*((2/3)/2))
+)):ToWorldSpace(CFrame.new(
+	(-math.sin(math.rad(rot.Z))*((2/3)/2)),
+	(-math.cos(math.rad(rot.Z))*((2/3)/2)),
+	0
+))
+pos = __torso.CFrame:ToObjectSpace(pos).Position 
+rot = Vector3.new(rot.X, rot.Y+180, rot.Z+180)
+return {Position = pos, Rotation = rot}
 end 
 
 local function delpp()
@@ -137,7 +152,7 @@ local affectenv = data.affectenv or true
 
 task.spawn(function()
 while active do 
-if mode ~= 12 then delpp() end
+if mode ~= 12 or not char or not char.Parent then delpp()getchar() end 
 local args 
 if mode == 1 then 
 args = {
@@ -1089,7 +1104,7 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
             [10] = {
-                ["Rotation"] = pp.Rotation-Vector3.new(0, 180, 180),
+                ["Rotation"] = pp.Rotation,
                 ["AssetId"] = 123708205722564,
                 ["Position"] = pp.Position+Vector3.new(0, 0.34, -2.2),
                 ["Scale"] = Vector3.new(2/3, 2/3, 3/4),
