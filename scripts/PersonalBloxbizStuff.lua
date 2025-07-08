@@ -56,91 +56,6 @@ if suc then
     data = res 
 end 
 
-
-local lp = game.Players.LocalPlayer
-local char 
-local function getchar()
-	char = char or lp.Character or lp.CharacterAdded:Wait() or lp.Character 
-	return char 
-end
-
--- IGNORE THIS MESS PLEASE
-local __part,__torsoAttach,__partAttach,__ballSocket,__springOri,__torso
-local function forpp()
-if __torso and __torso:IsDescendantOf(game) then else 
-while not __torso do
-getchar()
-__torso = char:FindFirstChild("LowerTorso") or char:FindFirstChild("Torso")
-task.wait(0.1)
-end 
-end 
-if __part and __part:IsDescendantOf(game) then else 
-__part = Instance.new("Part")
-__part.Name = "_test"
-__part.Parent = workspace
-__part.CFrame = __torso.CFrame:ToWorldSpace(CFrame.new(0, -0.67, -1))
-__part.CanCollide = false
-__part.CanQuery = false
-__part.CanTouch = false
-__part.Anchored = false
-__part.Size = Vector3.new(2/3,2/3,3/4)
-__part.Massless = true 
-__part.Transparency = 0.5
-end 
-if __torsoAttach and __torsoAttach:IsDescendantOf(game) then else 
-__torsoAttach = Instance.new("Attachment")
-__torsoAttach.Parent = __torso
-__torsoAttach.Position = Vector3.new((2/3)/2, 0.5, 0.8) -- Offset from torso center
-end 
-if __partAttach and __partAttach:IsDescendantOf(game) then else 
-__partAttach = Instance.new("Attachment")
-__partAttach.Parent = __part
-__partAttach.Position = Vector3.new(0, 0, 1)
-end 
-if __ballSocket and __ballSocket:IsDescendantOf(game) then else 
-__ballSocket = Instance.new("BallSocketConstraint")
-__ballSocket.Parent = __part
-__ballSocket.Attachment0 = __torsoAttach
-__ballSocket.Attachment1 = __partAttach
-__ballSocket.LimitsEnabled = false
-__ballSocket.UpperAngle = 0
-end 
-if __springOri and __springOri:IsDescendantOf(game) then else 
-__springOri = Instance.new("AlignOrientation")
-__springOri.Parent = __part
-__springOri.Attachment0 = __partAttach
-__springOri.Attachment1 = __torsoAttach
-__springOri.Responsiveness = 50
-__springOri.MaxTorque = 50
-__springOri.RigidityEnabled = false
-end 
-local trot = __torso.Rotation
-local pos =  __part.CFrame
-local rot = __part.Rotation 
-rot = Vector3.new(trot.X-rot.X, trot.Y-rot.Y, trot.Z-rot.Z)
-pos = pos:ToWorldSpace(CFrame.new(
-	(-math.cos(math.rad(rot.Y))*((2/3)/2)),
-	0,
-	(-math.sin(math.rad(rot.Y))*((2/3)/2))
-)):ToWorldSpace(CFrame.new(
-	(-math.sin(math.rad(rot.Z))*((2/3)/2)),
-	(-math.cos(math.rad(rot.Z))*((2/3)/2)),
-	0
-))
-pos = __torso.CFrame:ToObjectSpace(pos).Position 
-rot = Vector3.new(rot.X, rot.Y+180, rot.Z+180)
-return {Position = pos, Rotation = rot}
-end 
-
-local function delpp()
-if __part or __torsoAttach or __partAttach or __ballSocket or __springOri then 
-for _,v in {__part,__torsoAttach,__partAttach,__ballSocket,__springOri} do 
-pcall(v.Destroy,v)
-end 
-__part,__torsoAttach,__partAttach,__ballSocket,__springOri = nil,nil,nil,nil,nil 
-end
-end
-
 local remote = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnApplyOutfit 
 local remote2 = game:GetService("ReplicatedStorage").BloxbizRemotes.CatalogOnResetOutfit
 local x = 0
@@ -152,7 +67,6 @@ local affectenv = data.affectenv or true
 
 task.spawn(function()
 while active do 
-if mode ~= 12 or not char or not char.Parent then delpp()getchar() end 
 local args 
 if mode == 1 then 
 args = {
@@ -1026,7 +940,6 @@ args = {
     }
 }
 elseif mode == 12 then 
-local pp = forpp()
 args = {
     [1] = {
         ["WalkAnimation"] = 5319909330,
@@ -1104,9 +1017,9 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
             [10] = {
-                ["Rotation"] = pp.Rotation,
+                ["Rotation"] = Vector3.new(0-(math.tanh(math.sin(math.rad(x*1.5))*5)*10), 180, 180),
                 ["AssetId"] = 123708205722564,
-                ["Position"] = pp.Position+Vector3.new(0, 0.34, -2.2),
+                ["Position"] = Vector3.new(0, 0.34+(math.tanh(math.sin(math.rad(x*1.5))*5)*0.04), -2.2),
                 ["Scale"] = Vector3.new(2/3, 2/3, 3/4),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
