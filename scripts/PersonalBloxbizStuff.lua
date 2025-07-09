@@ -1568,7 +1568,6 @@ args = {
 }
 elseif mode == 17 then 
 local idk = ((math.sin(math.rad(x))+1)*10)+80
-print(idk)
 args = {
     [1] = {
         ["WalkAnimation"] = 5319909330,
@@ -1672,7 +1671,7 @@ args = {
             [13] = {
                 ["Rotation"] = Vector3.new(0, -x*3, 0),
                 ["AssetId"] = 12794574221,
-                ["Position"] = Vector3.new(0,0,0),
+                ["Position"] = Vector3.new(0,-5,5),
                 ["Scale"] = Vector3.new(30,30,30),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Shoulder
@@ -1686,12 +1685,12 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Face
             },
             [15] = {
-                ["Rotation"] = Vector3.new(0,0,0),
-                ["AssetId"] = 17609144689,
-                ["Position"] = Vector3.new(0,30,0),
-                ["Scale"] = Vector3.new(1,30,30),
+                ["Rotation"] = Vector3.new(0,-x,0),
+                ["AssetId"] = 97009583620260,
+                ["Position"] = Vector3.new(0,-80,-42.5),
+                ["Scale"] = Vector3.new(idk,1,idk),
                 ["IsLayered"] = false,
-                ["AccessoryType"] = Enum.AccessoryType.Hat
+                ["AccessoryType"] = Enum.AccessoryType.Waist
             }
         },
         ["RightLegColor"] = nil --[[Color3]],
