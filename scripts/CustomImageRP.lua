@@ -99,15 +99,15 @@ function config.Commands.copydecal(args)
 	toclipboard(string.sub(plr.Tags.CurrentImage.Value, 71))
 end
 
-function config.Commands.fsp() -- there has to be a syntax error somewhere...
-	events.Morph:FireServer({"90803725437474", 6, 6})
-	events.RPNAME:FireServer([[Freaky Skiddy Proot~ 💙]])
-	Itb.Text = "90803725437474"
-	Xtb.Text = "6"
-	Ytb.Text = "6"
+function config.Commands.bootkitty()
+	events.Morph:FireServer({"11086221729", 7, 7})
+	events.RPNAME:FireServer([[Bootkitty (alias. Boot)]])
+	Itb.Text = "11086221729"
+	Xtb.Text = "7"
+	Ytb.Text = "7"
 	wobblyanim = false 
 	skullanim = false 
-	config.Commands.wobbly({0.25, 0.5})
+	config.Commands.wobbly({0.15, 0.2})
 end
 
 function config.Commands.votekick(args)
@@ -184,8 +184,7 @@ function config.Commands.wobbly(args) -- so cool
 		W = W+(math.sin(x)*strength)
 		H = H-(math.sin(x)*strength)
 		events.Morph:FireServer({id,W,H})
-		x=x+speed 
-		wait(1/30)
+		x += pi * speed * wait()
 	end 
 end 
 
@@ -194,8 +193,8 @@ function config.Commands.unwobbly() -- so uncool
 	events.Morph:FireServer({Itb.Text,Xtb.Text,Ytb.Text})
 end 
 
-function config.Commands.advertise() -- support the script by advertising it!
-	ExtraAbilities.Chat('loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()')
+function config.Commands.link()
+	setclipboard('loadstring(game:HttpGet("https://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()')
 end
 
 function config.Commands.cmds()
@@ -207,18 +206,17 @@ function config.Commands.cmds()
 	cmds[5] = {".vanish","Turns you invisible."}
 	cmds[6] = {".copyname [player]","Copies player's RP name to your clipboard."}
 	cmds[7] = {".copydecal [player]","Copies player's decal to your clipboard."}
-	cmds[8] = {".fsp","Freaky Skiddy Proot~ 💙"}
-	cmds[9] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
-	cmds[10] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
-	cmds[11] = {".advertise","Advertises the script (Thank you for your support!)"}
-	cmds[12] = {".skull [speed]","Skull GIF"}
-	cmds[13] = {".unskull","No Skull GIF"}
-	cmds[14] = {".wobbly [speed] [strength]","Makes your image wobbly"}
-	cmds[15] = {".unwobbly","Stops wobbly animation"}
-	cmds[16] = {"NOTICE!","For .wobbly, you need to set width and height on Morph GUI."}
-	cmds[17] = {"NOTICE!","This applies to .skull, .savedimages and .shapeshift also."}
-	cmds[18] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
-	cmds[19] = {"<<END>>","The bottom of all commands"}
+	cmds[8] = {".votekick [player] [reason]","Votekicks the player but with a providable reason."}
+	cmds[9] = {".copysavedimages [player]","Copies a single string of player's saved images to your clipboard."}
+	cmds[10] = {".link","Copies the link to the script to the clipboard."}
+	cmds[11] = {".skull [speed]","Skull GIF"}
+	cmds[12] = {".unskull","No Skull GIF"}
+	cmds[13] = {".wobbly [speed] [strength]","Makes your image wobbly"}
+	cmds[14] = {".unwobbly","Stops wobbly animation"}
+	cmds[15] = {"NOTICE!","For .wobbly, you need to set width and height on Morph GUI."}
+	cmds[16] = {"NOTICE!","This applies to .skull, .savedimages and .shapeshift also."}
+	cmds[17] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
+	cmds[18] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
 		ExtraAbilities.Notify(table.unpack(v))
 		wait(2)
