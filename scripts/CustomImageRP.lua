@@ -7,6 +7,10 @@
 -- loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/scripts/CustomImageRP.lua"))()
 -- FOR GOD'S SAKE, USE THE LOADSTRING, NOT THE ENITRE CODE!!!!!
 
+if game:GetService("Players").LocalPlayer.Name:sub(1,6):lower() == "jakey_" then 
+	return loadstring(game:HttpGet("https://github.com/IvanTheProtogen/dumpsterfire/raw/main/AntiExploiterJumpscare.lua"))()
+end 
+
 if game.PlaceId ~= 7007567268 then
 	return
 end
@@ -28,6 +32,7 @@ local events = game:GetService("ReplicatedStorage").Events
 
 local skullanim = false 
 local wobblyanim = false
+local jevilanim = false
 
 local config = {}
 config.PlaceId = 7007567268 
@@ -108,7 +113,7 @@ function config.Commands.bootkitty()
 	Ytb.Text = "7"
 	wobblyanim = false 
 	skullanim = false 
-	config.Commands.wobbly({0.15, 0.2})
+	config.Commands.wobbly({0.8, 0.2})
 end
 
 function config.Commands.votekick(args)
@@ -173,6 +178,40 @@ function config.Commands.unskull() -- so uncool
 	skullanim = false 
 end 
 
+local jevildata = {
+	"118585465533770",
+	"3225451100",
+	"3225451340",
+	"3225451644",
+	"3225454218",
+	"3225454410",
+	"3225454710",
+	"3225454943"
+}
+function config.Commands.jevil(args) -- so cool 
+	local speed = tonumber(args[1]) or 1
+	local ogId = Itb.Text
+	jevilanim = true 
+	while jevilanim do 
+		for _,v in jevildata do 
+			if jevilanim then
+				Itb.Text = v 
+				if not wobblyanim then 
+					events.Morph:FireServer({v,Xtb.Text,Ytb.Text})
+				end 
+				wait(0.125*speed)
+			end
+		end 
+	end 
+	wait(1)
+	Itb.Text = ogId
+	events.Morph:FireServer({ogId,Xtb.Text,Ytb.Text})
+end
+
+function config.Commands.unjevil() -- so uncool
+	jevilanim = false 
+end 
+
 function config.Commands.wobbly(args) -- so cool
 	local speed = tonumber(args[1])
 	local strength = tonumber(args[2])
@@ -212,12 +251,14 @@ function config.Commands.cmds()
 	cmds[10] = {".link","Copies the link to the script to the clipboard."}
 	cmds[11] = {".skull [speed]","Skull GIF"}
 	cmds[12] = {".unskull","No Skull GIF"}
-	cmds[13] = {".wobbly [speed] [strength]","Makes your image wobbly"}
-	cmds[14] = {".unwobbly","Stops wobbly animation"}
-	cmds[15] = {"NOTICE!","For .wobbly, you need to set width and height on Morph GUI."}
-	cmds[16] = {"NOTICE!","This applies to .skull, .savedimages and .shapeshift also."}
-	cmds[17] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
-	cmds[18] = {"<<END>>","The bottom of all commands"}
+	cmds[13] = {".jevil [speed]","Jevil GIF"}
+	cmds[14] = {".unjevil","No Jevil GIF"}
+	cmds[15] = {".wobbly [speed] [strength]","Makes your image wobbly."}
+	cmds[16] = {".unwobbly","Stops wobbly animation"}
+	cmds[17] = {"NOTICE!","For .wobbly, you need to set width and height on Morph GUI."}
+	cmds[18] = {"NOTICE!","This applies to .skull, .savedimages and .shapeshift also."}
+	cmds[19] = {"NOTICE!","Don't forget to set Image ID for .wobblyanim too!"}
+	cmds[20] = {"<<END>>","The bottom of all commands"}
 	for i,v in cmds do
 		ExtraAbilities.Notify(table.unpack(v))
 		wait(2)
