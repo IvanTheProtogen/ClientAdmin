@@ -22,6 +22,7 @@ local Ytb = morphFrame.Height
 
 local wait = task.wait
 local spawn = task.spawn
+local pi = math.pi
 
 local events = game:GetService("ReplicatedStorage").Events
 
