@@ -1,4 +1,5 @@
--- i got bored, so i decided to drop a banwave bomb on yall :3
+--!native 
+--!optimize 2 
 
 -- put me on autoexecute!
 -- type ".cmds" in chat for commands!
@@ -105,15 +106,16 @@ function config.Commands.copydecal(args)
 	toclipboard(string.sub(plr.Tags.CurrentImage.Value, 71))
 end
 
-function config.Commands.bootkitty()
-	events.Morph:FireServer({"11086221729", 7, 7})
+function config.Commands.bootkitty() -- hue hue hue
+	events.Morph:FireServer({"138727114476839", 7, 6})
 	events.RPNAME:FireServer([[Bootkitty (alias. Boot)]])
-	Itb.Text = "11086221729"
+	Itb.Text = "138727114476839"
 	Xtb.Text = "7"
-	Ytb.Text = "7"
+	Ytb.Text = "6"
 	wobblyanim = false 
 	skullanim = false 
-	config.Commands.wobbly({0.8, 0.2})
+	jevilanim = false 
+	config.Commands.wobbly({0.7, 0.1})
 end
 
 function config.Commands.votekick(args)
