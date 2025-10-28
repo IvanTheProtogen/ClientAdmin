@@ -24,6 +24,7 @@
 18. mal0 (X)
 19. mal0 (Q)
 20. mal0
+21. Bootkitty
 ]]
 
 -- .size [size]
@@ -2037,6 +2038,125 @@ args = {
         ["HeightScale"] = 3*size,
         ["HeadColor"] = color,
         ["LeftLeg"] = 18156931592
+    }
+}
+elseif mode == 21 then 
+args = {
+    [1] = {
+        ["WalkAnimation"] = 18538146480,
+        ["Accessories"] = {
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 14103139737,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Back
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 100427994622019,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Front
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 12114581505,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Front
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 11714797755,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 15295909184,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 14991646689,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Neck
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 12114574600,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Shoulder
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 12114570675,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Shoulder
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 16738408873,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 7485974573,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            },
+            {
+                ["Rotation"] = Vector3.zero,
+                ["AssetId"] = 115044309853350,
+                ["Position"] = Vector3.zero,
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Waist
+            }
+        },
+        ["MoodAnimation"] = 0,
+        ["JumpAnimation"] = 18538153691,
+        ["ProportionScale"] = 1*size,
+        ["BodyTypeScale"] = 0,
+        ["ClimbAnimation"] = 123695349157584,
+        ["Face"] = 0,
+        ["Pants"] = 11752024081,
+        ["DepthScale"] = 1*size,
+        ["WidthScale"] = 1*size,
+        ["SwimAnimation"] = 106537993816942,
+        ["RightArm"] = 136213982609782,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 0,
+        ["Shirt"] = 11752023381,
+        ["RightLeg"] = 88246000710443,
+        ["RunAnimation"] = 18538133604,
+        ["Torso"] = 48474356,
+        ["FallAnimation"] = 18538164337,
+        ["IdleAnimation"] = 126354114956642,
+        ["LeftArm"] = 106064265828459,
+        ["HeadScale"] = 1*size,
+        ["HeightScale"] = 1*size,
+        ["LeftLeg"] = 105694625450094
     }
 }
 else args={} end 
