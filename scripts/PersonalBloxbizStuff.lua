@@ -35,7 +35,7 @@
 -- .value [x]
 -- .affectenv [boolean]
 
-print("VERSION: 103d26eb-da77-4c73-9f39-a0f12c0d05ea")
+print("VERSION: d81f3cdc-6466-444d-ab30-2013708a9419")
 
 local httpsvc = game:GetService("HttpService")
 local json = {}
@@ -2232,9 +2232,8 @@ humanoid.JumpPower = 50*size
 workspace.Gravity = 196.1999969482422*size
 end)
 end 
-x=x+(5*speed)
-task.wait(1/20)
-end
+x += 5 * speed * task.wait()
+end 
 end)
 
 ClientAdmin=loadstring(game:HttpGet("http://github.com/IvanTheProtogen/ClientAdmin/raw/main/main.lua"))();
