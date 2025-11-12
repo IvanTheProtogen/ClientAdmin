@@ -2181,6 +2181,14 @@ args = {
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Hat
             },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 96470943239982,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Unknown
+            }
         },
         ["RightLegColor"] = nil --[[Color3]],
         ["MoodAnimation"] = 14618207727,
