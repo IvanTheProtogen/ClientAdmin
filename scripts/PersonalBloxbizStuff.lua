@@ -23,8 +23,9 @@
 17. Better Garry's Mod proto but FINAL BOSS (disruptive)
 18. mal0 (X)
 19. mal0 (Q)
-20. mal0
-21. Bootkitty
+20. mal0 
+21. Bootkitty 
+22. Roaring Knight 
 ]]
 
 -- .size [size]
@@ -2158,7 +2159,60 @@ args = {
         ["HeightScale"] = 1*size,
         ["LeftLeg"] = 105694625450094
     }
-}
+} 
+elseif mode == 22 then 
+args = {
+    {
+        ["WalkAnimation"] = 619512767,
+        ["Accessories"] = {
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 83912795737035,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Back
+            },
+            {
+                ["Rotation"] = Vector3.new(0, 0, 0),
+                ["AssetId"] = 70575497862057,
+                ["Position"] = Vector3.new(0, 0, 0),
+                ["Scale"] = Vector3.new(1, 1, 1),
+                ["IsLayered"] = false,
+                ["AccessoryType"] = Enum.AccessoryType.Hat
+            },
+        },
+        ["RightLegColor"] = nil --[[Color3]],
+        ["MoodAnimation"] = 14618207727,
+        ["LeftLegColor"] = nil --[[Color3]],
+        ["JumpAnimation"] = 619511974,
+        ["ProportionScale"] = 0,
+        ["BodyTypeScale"] = 1*size,
+        ["ClimbAnimation"] = 619509955,
+        ["LeftArmColor"] = nil --[[Color3]],
+        ["Face"] = 0,
+        ["Pants"] = 106412529469699,
+        ["RightArmColor"] = nil --[[Color3]],
+        ["DepthScale"] = 1.2*size,
+        ["WidthScale"] = 1.2*size,
+        ["SwimAnimation"] = 619512450,
+        ["RightArm"] = 96470943239982,
+        ["GraphicTShirt"] = 0,
+        ["Head"] = 102040487289609,
+        ["Shirt"] = 0,
+        ["RightLeg"] = 75136146947254,
+        ["RunAnimation"] = 619512153,
+        ["Torso"] = 90636747890939,
+        ["FallAnimation"] = 619511417,
+        ["TorsoColor"] = nil --[[Color3]],
+        ["IdleAnimation"] = 619511648,
+        ["LeftArm"] = 79206206355428,
+        ["HeadScale"] = 1.2*size,
+        ["HeightScale"] = 1.2*size,
+        ["HeadColor"] = nil --[[Color3]],
+        ["LeftLeg"] = 138370680200434
+    }
+} 
 else args={} end 
 
 remote:FireServer(unpack(args))
