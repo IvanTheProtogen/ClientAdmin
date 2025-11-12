@@ -2183,11 +2183,11 @@ args = {
             },
             {
                 ["Rotation"] = Vector3.new(0, 0, 0),
-                ["AssetId"] = 96470943239982,
+                ["AssetId"] = 108216719969279,
                 ["Position"] = Vector3.new(0, 0, 0),
                 ["Scale"] = Vector3.new(1, 1, 1),
                 ["IsLayered"] = false,
-                ["AccessoryType"] = Enum.AccessoryType.Unknown
+                ["AccessoryType"] = Enum.AccessoryType.Jacket
             }
         },
         ["RightLegColor"] = nil --[[Color3]],
