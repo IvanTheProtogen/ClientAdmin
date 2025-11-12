@@ -35,7 +35,7 @@
 -- .value [x]
 -- .affectenv [boolean]
 
-print("VERSION: d81f3cdc-6466-444d-ab30-2013708a9419")
+print("VERSION: 0d5fbefc-d038-4a06-9b17-ea2854b68ef1")
 
 local httpsvc = game:GetService("HttpService")
 local json = {}
@@ -2119,9 +2119,9 @@ args = {
                 ["AccessoryType"] = Enum.AccessoryType.Waist
             },
             {
-                ["Rotation"] = Vector3.zero,
+                ["Rotation"] = Vector3.new(0, math.sin(math.rad(x*3.5))*20, 0),
                 ["AssetId"] = 7485974573,
-                ["Position"] = Vector3.zero,
+                ["Position"] = Vector3.new(math.sin(math.rad(x*3.5))*0.5, 0, 0),
                 ["Scale"] = Vector3.new(1, 1, 1),
                 ["IsLayered"] = false,
                 ["AccessoryType"] = Enum.AccessoryType.Waist
@@ -2232,7 +2232,7 @@ humanoid.JumpPower = 50*size
 workspace.Gravity = 196.1999969482422*size
 end)
 end 
-x += 5 * speed * task.wait()
+x += 60 * speed * task.wait()
 end 
 end)
 
