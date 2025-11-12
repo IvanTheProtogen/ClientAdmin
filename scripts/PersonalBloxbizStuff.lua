@@ -35,7 +35,7 @@
 -- .value [x]
 -- .affectenv [boolean]
 
--- VERSION: b0216dfd-cedf-402a-9d45-df6ddf27ebc5
+print("VERSION: 103d26eb-da77-4c73-9f39-a0f12c0d05ea")
 
 local httpsvc = game:GetService("HttpService")
 local json = {}
@@ -2186,7 +2186,7 @@ args = {
                 ["AssetId"] = 108216719969279,
                 ["Position"] = Vector3.new(0, 0, 0),
                 ["Scale"] = Vector3.new(1, 1, 1),
-                ["IsLayered"] = false,
+                ["IsLayered"] = true,
                 ["AccessoryType"] = Enum.AccessoryType.Jacket
             }
         },
