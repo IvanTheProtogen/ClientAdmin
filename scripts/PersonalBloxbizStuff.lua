@@ -34,6 +34,7 @@
 -- .speed [speed]
 -- .value [x]
 -- .affectenv [boolean]
+-- .rate [upload_rate]
 
 print("VERSION: 0d5fbefc-d038-4a06-9b17-ea2854b68ef1")
 
@@ -51,13 +52,14 @@ if not table.find(listfiles(""),"bloxbizstuff.cfg") then
         ["mode"] = 1,
         ["size"] = 1,
         ["speed"] = 1,
-        ["affectenv"] = true
+        ["affectenv"] = true,
+		["rate"] = 0.05
     }))
 end 
 
 local data = {}
 local suc,res = pcall(json.decode,readfile("bloxbizstuff.cfg"))
-if suc then 
+if suc and res then 
     data = res 
 end 
 
@@ -68,7 +70,11 @@ local size = data.size or 1
 local active = true 
 local mode = data.mode or 1 
 local speed = data.speed or 1 
-local affectenv = data.affectenv or true 
+local affectenv = data.affectenv
+if affectenv == nil then 
+	affectenv = true 
+end 
+local rate = data.rate or 0.05 
 
 task.spawn(function()
 while active do 
@@ -2232,7 +2238,7 @@ humanoid.JumpPower = 50*size
 workspace.Gravity = 196.1999969482422*size
 end)
 end 
-x += 60 * speed * task.wait()
+x += 60 * speed * task.wait(rate) 
 end 
 end)
 
@@ -2280,6 +2286,12 @@ function config.Commands.affectenv(args)
         affectenv = not affectenv 
     end 
     data.affectenv = affectenv
+    writefile("bloxbizstuff.cfg", json.encode(data))
+end 
+
+function config.Commands.rate(args)
+    rate = tonumber(args[1]) or 0.05 
+    data.rate = rate 
     writefile("bloxbizstuff.cfg", json.encode(data))
 end 
 
